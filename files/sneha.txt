@@ -1,0 +1,1 @@
+instagram[username = sneha123 ,password = sneha@123],facebook[username = sneha@1234, password = sneha9989]

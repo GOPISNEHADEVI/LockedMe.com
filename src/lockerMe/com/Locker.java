@@ -27,7 +27,7 @@ public class Locker {
     private static final String MAIN_MENU_PROMPT =
             "\nMAIN MENU - Select any of the following: \n"+
                     "1 -> List files in directory\n"+
-                    "2 -> Add, Delete or Search\n"+
+                    "2 -> Add, Delete, Search,Write,Read\n"+
                     "3 -> Exit Program";
 
     private static final String SECONDARY_MENU_PROMPT =
@@ -171,7 +171,7 @@ public class Locker {
     }
     void writeToFile(String filename) {
 		try {
-			FileWriter fileWriter = new FileWriter(filename);
+			FileWriter fileWriter = new FileWriter(folder_name +"/"+filename);
 			Scanner input = new Scanner(System.in);
 			String userinput = input.nextLine();
 			fileWriter.write(userinput);
@@ -186,7 +186,7 @@ public class Locker {
     }
     void readFromFile(String filename) {
     	try {
-			FileInputStream fileInputStream = new FileInputStream(filename);
+			FileInputStream fileInputStream = new FileInputStream(folder_name +"/"+filename);
 
 			int count =0;
 			while((count=fileInputStream.read()) !=-1 ) {
